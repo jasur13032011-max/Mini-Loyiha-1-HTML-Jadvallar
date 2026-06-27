@@ -6,34 +6,43 @@ HTML
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Navbar Proyekti</title>
+    <title>CSS Grid Kartochkalar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">MyBrand</div>
-        <ul class="nav-links">
-            <li><a href="#home">Bosh sahifa</a></li>
-            <li><a href="#services">Xizmatlar</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Aloqa</a></li>
-        </ul>
-    </nav>
+    <div class="grid-container">
+        
+        <div class="card">
+            <div class="profile-wrapper">
+                <img src="https://picsum.photos/150?random=1" alt="Profil" class="profile-img">
+            </div>
+            <h3>Anvar Alimov</h3>
+            <p class="role">Frontend Dasturchi</p>
+            <p class="desc">HTML, CSS va JavaScript yordamida zamonaviy va mukammal veb-saytlar yaratadi.</p>
+            <button class="btn">Bog'lanish</button>
+        </div>
 
-    <div class="content">
-        <section id="home">
-            <h1>Xush kelibsiz!</h1>
-            <p>Sahifani pastga scroll qilib (aylantirib), navbarning yopishib qolishini va orqa fon xiralashishini ko'ring.</p>
-        </section>
-        <section id="services">
-            <h2>Xizmatlarimiz</h2>
-            <p>Zamonaviy va mukammal veb-saytlar yaratish.</p>
-        </section>
-        <section id="portfolio">
-            <h2>Ijodiy ishlar</h2>
-            <p>Bizning oxirgi loyihalarimiz bilan tanishing.</p>
-        </section>
+        <div class="card">
+            <div class="profile-wrapper">
+                <img src="https://picsum.photos/150?random=2" alt="Profil" class="profile-img">
+            </div>
+            <h3>Zarina Karimova</h3>
+            <p class="role">UI/UX Dizayner</p>
+            <p class="desc">Figma va Adobe XD orqali foydalanuvchilarga qulay va chiroyli interfeyslar chizadi.</p>
+            <button class="btn">Ko'rish</button>
+        </div>
+
+        <div class="card">
+            <div class="profile-wrapper">
+                <img src="https://picsum.photos/150?random=3" alt="Profil" class="profile-img">
+            </div>
+            <h3>Jasur Axmedov</h3>
+            <p class="role">Project Manager</p>
+            <p class="desc">Loyihalarni o'z vaqtida, sifatli va jamoa bilan hamjihatlikda bajarilishini ta'minlaydi.</p>
+            <button class="btn">Bog'lanish</button>
+        </div>
+
     </div>
 
 </body>
@@ -49,115 +58,105 @@ CSS
 }
 
 body {
-    /* Orqa fonga chiroyli gradient beramiz (scroll effekti bilinishi uchun) */
-    background: linear-gradient(135deg, #1e3c72, #2a5298, #667eea, #764ba2);
-    background-size: cover;
-    background-attachment: fixed;
-    color: #fff;
-}
-
-/* ==========================================
-   NAVBAR SOZLAMALARI
-   ========================================== */
-.navbar {
-    /* 1. Sahifa pastga scroll bo'lganda tepada qolishi uchun */
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Har doim boshqa elementlardan ustida turishi uchun */
-
-    /* 2. Flexbox orqali Logo va Havolalarni ikki chetga surish */
+    background-color: #f4f7f6;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    padding: 20px 10%;
-    background: rgba(255, 255, 255, 0.1); /* Shaffof fon */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
-    /* 3. Backdrop-filter blur effekti (Oyna effekti) */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Safari brauzeri uchun */
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-/* 4. Flexbox orqali havolalarni yonma-yon joylashtirish */
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px; /* Havolalar orasidagi masofa */
-}
-
-/* Havolalarning standart ko'rinishi */
-.nav-links a {
-    /* 5. Ostidagi chiziqni olib tashlash */
-    text-decoration: none;
-    
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease;
-    display: inline-block;
-}
-
-/* 6. a:hover rangini o'zgartirish */
-.nav-links a:hover {
-    color: #00f2fe; /* Yorqin neon firuza rangi */
-    transform: translateY(-2px); /* Biroz tepaga ko'tarilish effekti */
-}
-
-/* ==========================================
-   KONTENT SOZLAMALARI (Scroll seziyishi uchun)
-   ========================================== */
-.content {
-    padding: 40px 10%;
-}
-
-section {
-    min-height: 60vh; /* Har bir bo'lim yetarlicha katta bo'lishi uchun */
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: center;
+    padding: 40px 20px;
 }
 
-section h1, section h2 {
-    font-size: 2.5rem;
+/* 1. CSS Grid orqali kartochkalarni joylashtirish */
+.grid-container {
+    display: grid;
+    /* Ekran o'lchamiga qarab avtomatik ustunlar sonini moslashtiradi (Responsive) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Kartochka stillari */
+.card {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    
+    /* 2. Border-radius va Box-shadow */
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    
+    /* 6. Silliq animatsiya uchun transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 3. Hover: transform: translateY(-8px) */
+.card:hover {
+    transform: translateY(-8px); /* Kartochka 8px tepaga ko'tariladi */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Soya ham quyuqlashadi */
+}
+
+/* 4. Profil rasmini doira shakliga keltirish */
+.profile-wrapper {
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Mukammal doira shakli */
+    object-fit: cover; /* Rasm cho'zilib ketmasligi uchun */
+    border: 3px solid #667eea; /* Rasm atrofiga chiroyli hoshiya */
+    padding: 3px;
+}
+
+/* Matnlar stillari */
+.card h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.role {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-bottom: 15px;
 }
 
-section p {
-    font-size: 1.2rem;
-    color: #e0e0e0;
+.desc {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
 }
 
-/* Responsive dizayn (Mobil qurilmalar uchun) */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 15px 5%;
-    }
-    
-    .nav-links {
-        gap: 15px;
-    }
-    
-    .nav-links a {
-        font-size: 0.95rem;
-    }
+/* 5. Tugma stillari */
+.btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 25px; /* Dumaloq burchakli tugma */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+    transition: all 0.2s ease;
 }
-Kod qanday ishlaydi?
-position: sticky; top: 0; — Element brauzer oynasining eng tepasiga (top: 0) yetganda yopishib qoladi va scroll bo'lganda ham joyidan qimirlamaydi.
 
-display: flex (Navbarda) — Logo chap tomonda, havolalar bloki esa o'ng tomonda chiroyli joylashishini ta'minlaydi (justify-content: space-between).
+/* Tugma hover effekti */
+.btn:hover {
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.5);
+    opacity: 0.9;
+}
+Kodning asosiy xususiyatlari:
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) — Bu qator yordamida media-so'rovlarsiz (@media) mutlaqo responsive dizayn yaratildi. Katta ekranda 3 ta kartochka yonma-yon turadi, telefonlarda esa avtomatik bittadan bo'lib joylashadi.
 
-display: flex (Ro'yxatda) — <ul> ichidagi <li> elementlarini vertikal emas, yonma-yon (gorizontal) qilib tizib beradi.
+border-radius: 50% — Kvadrat shaklidagi rasmni silliq aylana shakliga keltirib beradi.
 
-backdrop-filter: blur(10px) — Navbar ostidan o'tayotgan matn va ranglarni xiralashtirib, juda zamonaviy "muzlagan oyna" effektini beradi.
+translateY(-8px) — Kartochka ustiga sichqoncha kelganda uning Y o'qi (tepa-past) bo'ylab yuqoriga ohista siljishini ta'minlaydi.
 
-text-decoration: none; — Havolalarning (<a> tegi) tagidagi standart chiziqni olib tashlaydi.
-
-a:hover — Sichqoncha havola ustiga kelganda rang silliq ravishda firuza (#00f2fe) rangiga o'zgaradi.
+transition: ... 0.3s ease — Hover bo'lgandagi sakrashni yumshatib,
