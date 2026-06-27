@@ -1,179 +1,141 @@
 # Mini-Loyiha-1-HTML-Jadvallar
-stillari keltirilgan.
+Mana, barcha so'ralgan talablar (list-style, fon rasmi, backdrop-filter, Flexbox, Hover effekti va Responsive dizayn) mukammal jamlangan kod namunasi.
 
-Kodni brauzerda ochib tekshirishingiz mumkin:
+Bu loyihada chiroyli, orqa foni xiralashgan (glassmorphism effekti) va harakatlanuvchi ro'yxat elementlari yaratilgan.
 
+1. HTML Kod (index.html)
 HTML
 <!DOCTYPE html>
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Jadvallar va CSS Stillari</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
-            padding: 20px;
-            color: #333;
-        }
-
-        /* Umumiy jadval stillari */
-        table {
-            width: 100%;
-            max-width: 800px;
-            margin: 20px auto 40px auto;
-            border-collapse: collapse; /* Chegara chiziqlarini birlashtirish */
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        /* Caption (Jadval nomi) stili */
-        caption {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #2c3e50;
-            caption-side: top;
-        }
-
-        /* th (Sarlavha) uchun alohida stil */
-        th {
-            background-color: #34495e;
-            color: #ffffff;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 3px solid #2c3e50;
-        }
-
-        /* td (Katakcha) uchun alohida stil */
-        td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #e0e0e0;
-            color: #555;
-            font-size: 0.95rem;
-        }
-
-        /* Alternativ ranglar (Zebra effekti) */
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        /* Hover effekti (Sichqoncha ustiga kelganda) */
-        tr:hover {
-            background-color: #e8f4fd;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        /* Murakkab jadvaldagi birlashtirilgan umumiy natija qatori uchun maxsus uslub */
-        .total-row {
-            font-weight: bold;
-            background-color: #eaeded !important;
-        }
-    </style>
+    <title>Zamonaviy Flexbox Loyihasi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <table>
-        <caption>1-jadval: Foydalanuvchilar ro'yxati (Oddiy jadval)</caption>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Ism</th>
-                <th>Familiya</th>
-                <th>Kasbi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Anvar</td>
-                <td>Aliyev</td>
-                <td>Dasturchi</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Dilnoza</td>
-                <td>Karimova</td>
-                <td>Dizayner</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Jasur</td>
-                <td>Tojirov</td>
-                <td>Menejer</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Shahnoza</td>
-                <td>Umarova</td>
-                <td>SMM mutaxassis</td>
-            </tr>
-        </tbody>
-    </table>
-
-
-    <table>
-        <caption>2-jadval: Oylik savdo hisoboti (Murakkab jadval)</caption>
-        <thead>
-            <tr>
-                <th rowspan="2">Kategoriya</th>
-                <th rowspan="2">Mahsulot</th>
-                <th colspan="2">Savdo hajmi (Haftalar kesimida)</th>
-            </tr>
-            <tr>
-                <th>1-Hafta</th>
-                <th>2-Hafta</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="2">Elektronika</td>
-                <td>Smartfon</td>
-                <td>$5,000</td>
-                <td>$6,200</td>
-            </tr>
-            <tr>
-                <td>Noutbuk</td>
-                <td>$8,500</td>
-                <td>$7,900</td>
-            </tr>
-            <tr>
-                <td rowspan="2">Kiyim-kechak</td>
-                <td>Kurtka</td>
-                <td>$1,200</td>
-                <td>$1,500</td>
-            </tr>
-            <tr>
-                <td>Oyoq kiyim</td>
-                <td>$2,100</td>
-                <td>$2,400</td>
-            </tr>
-            <tr class="total-row">
-                <td colspan="2">Umumiy hisob</td>
-                <td>$16,800</td>
-                <td>$18,000</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <h2>Kardlar Ro'yxati</h2>
+        <ul class="card-list">
+            <li class="card-item">CSS Grid & Flexbox darslari</li>
+            <li class="card-item">Responsive veb-dizayn asoslari</li>
+            <li class="card-item">Backdrop-filter va vizual effektlar</li>
+            <li class="card-item">Zamonaviy CSS Hover effektlari</li>
+        </ul>
+    </div>
 
 </body>
 </html>
-Kod qanday topshiriqlarni bajardi?
-2 ta jadval: Birinchisi oddiy tuzilishga ega, ikkinchisida esa rowspan va colspan yordamida murakkab tuzilma hosil qilingan.
+2. CSS Kod (style.css)
+CSS
+/* Umumiy sozlamalar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-border-collapse: collapse;: Har ikki jadval chekkalari bir-biriga yopishgan va chiroyli ko'rinishda.
+/* 1. Fon rasmi va uning fiksatsiyasi */
+body {
+    min-height: 100vh;
+    background-image: url('https://picsum.photos/1920/1080'); /* Sifatli ixtiyoriy rasm */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Sahifa aylantirilganda fon joyida qoladi */
+    
+    /* 2. Flexbox yordamida konteynerni markazga joylashtirish */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
-Alohida stillar: th uchun to'q rangli fon va oq matn, td uchun esa ochroq rang va ingichka chiziqlar berildi.
+/* Konteyner va Glassmorphic (Oyna) effekti */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    /* 3. Backdrop-filter effekti */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Safari uchun */
+    
+    text-align: center;
+}
 
-tr:nth-child(even): Jadvallarning har ikkinchi qatori avtomatik ravishda och kulrang (#f8f9fa) tusga kiradi.
+h2 {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
 
-tr:hover: Sichqoncha ko'rsatkichi qator ustiga kelganda qator rangi mayin ko'k (#e8f4fd) rangga o'zgaradi.
+/* 4. Flexbox orqali ro'yxat elementlarini tekislash */
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Elementlar orasidagi masofa */
+    
+    /* 5. List-style bilan markerlarni o'zgartirish */
+    list-style: "🔥 "; /* Standart nuqtani ixtiyoriy emoji yoki belgiga almashtirish */
+    padding-left: 20px;
+}
 
-caption: Har bir jadvalning tepasida uning nomi joylashtirildi.
+/* Ro'yxat elementlarining ko'rinishi */
+.card-item {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-align: left;
+    font-weight: 500;
+    transition: all 0.3s ease; /* Silliq effekt uchun */
+    cursor: pointer;
+}
+
+/* 6. Hover effekti */
+.card-item:hover {
+    background: #fff;
+    color: #333;
+    transform: translateX(10px) scale(1.02); /* O'ngga surilish va biroz kattalashish */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 7. Responsive ko'rinish (Media so'rovlar) */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-item {
+        font-size: 0.95rem;
+        padding: 12px 15px;
+    }
+    
+    .card-item:hover {
+        transform: translateY(-5px); /* Mobil qurilmada chetga emas, tepaga ko'tariladi */
+    }
+}
+Kodda bajarilgan vazifalar qisqacha:
+list-style: "🔥 " — Ro'yxat boshidagi zerikarli qora nuqtalarni olov emojisi bilan almashtirdi.
+
+background-attachment: fixed — Fon rasmini qotirib qo'ydi, kontent uning ustida suzib yurgandek ko'rinadi.
+
+backdrop-filter: blur(12px) — Konteyner orqasidagi fonni xiralashtirib, oyna (glassmorphism) effektini berdi.
+
+display: flex — Ham butun sahifani o'rtaga keltirishda, ham ro'yxat elementlarini chiroyli ketma-ket joylashtirishda ishlatildi.
+
+:hover — Element ustiga sichqoncha kelganda rang o'zgarishi, o'ngga surilishi va soya paydo bo'lishini ta'minladi.
+
+@media (max-width: 480px) — Ekran kichrayganda (mobil telefonlarda) shriftlar va paddinglar avtomatik kichrayib, moslashuvchan (responsive) bo'lishini ta'minladi.
